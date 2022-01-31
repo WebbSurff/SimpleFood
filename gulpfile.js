@@ -9,6 +9,7 @@ const del = require('del');
 
 var browserSync = require('browser-sync').create();
 
+
 function browsersync() {
     browserSync.init({
         server: {

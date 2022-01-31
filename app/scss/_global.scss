@@ -1,0 +1,141 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $bg-total;
+    @extend %rubik-400;
+    line-height: 1.5;
+    color: $default-color;
+    font-size: 20px;
+    outline: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+ .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.title {
+    @extend %rubik-600;
+    font-size: 36px;
+    line-height: 1.3;
+    color: $title-color;
+}
+
+.button {
+     color: #fff;
+     font-size: 14px;
+     line-height: 1.3;
+     background-color: $accent-color;
+     border-radius: 5px;
+     padding: 7px 16px;
+     transition: background-color 0.3s, color 0.4s;
+     
+    &:focus {
+         border-radius: 5px;
+         color: $accent-color;
+         color: #fff;
+         box-shadow: $boxshadow-focus;
+    }
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 5px 12px rgba(255, 104, 56, 0.2), 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+        color: $accent-color;
+    }
+
+    &:active {
+         background-color: rgba(255, 122, 80, 0.1);
+    }
+
+}  
+
+
+.detailed {
+    
+    color: $title-color;
+    text-decoration: underline;
+    border-radius: 5px;
+    transition: color 0.4s, box-shadow 0.3s;
+
+    &:focus {
+        box-shadow: $boxshadow-focus;
+        border-radius: 5px       
+    }
+        
+    &:hover {
+        color: $accent-color;
+        text-decoration: none;
+    }
+        
+    &:active {
+        color: $default-color;
+        text-shadow: $textshadow-active;
+    }
+        
+}
+
+
+
+.product {
+
+    &__item {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 1px #ECECEC;
+        display: grid;
+        grid-template: auto minmax(45px, auto)/1fr;
+        padding: 20px 15px;
+        transition: box-shadow 0.3s;
+
+        &:hover {
+              box-shadow: 0px 0px 0px 1px #FF6838;
+        }
+    } 
+
+    &__link {
+        margin-bottom: 9px;
+    }
+
+    &__img {
+        margin: 0 auto;
+    }
+    
+    &__title {
+        font-size: 15px;
+        @extend %rubik-400;
+        line-height: 1.1;
+    }
+    
+    &__price {
+        margin-bottom: 10px;
+        color: $title-color;
+        @extend %rubik-600;
+        font-size: 15px;
+    }
+    
+}
+
+
