@@ -1,0 +1,22 @@
+%rubik-300 {
+    font-family: 'Rubik-Light', Tahoma, sans-serif;
+    font-weight: 300;
+}
+
+%rubik-400 {
+    font-family: 'Rubik-Regular', Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+%rubik-600 {
+    font-family: 'Rubik-SemiBold', Tahoma, sans-serif;
+    font-weight: 600;
+}
+
+$bg-total: #f9faff;
+$bg-active: #FFF2ED;
+$accent-color: #ff6838;
+$title-color: #363853;
+$default-color: #31352B;
+$boxshadow-focus: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+$textshadow-active: 2px 2px 5px rgba(49, 53, 43, 0.5);
