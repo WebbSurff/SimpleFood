@@ -38,15 +38,15 @@
         &::before {
             content: '';
             position: absolute;
-            width: 24px;
-            height: 19px;
+            width: 23px;
+            height: 23px;
             background-repeat: no-repeat;
         }
 
         &::after {
             background-image: url('../images/sprite.svg#suffix-right');
             right: 0;
-            bottom: 91px;
+            bottom: 88px;
         }
 
         &::before {
