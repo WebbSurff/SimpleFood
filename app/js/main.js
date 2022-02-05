@@ -1,14 +1,28 @@
 $(function () {
 
-    $(".icon__btn").on("click", function () {
-        $(".icon__input").toggleClass("icon__input-active");
+    $(".user-nav__btn").on("click", function () {
+        $(".user-nav__input").toggleClass("user-nav__input-active");
     })
-    $(".icon__btn").on("click", function () {
-        $(".icon__button").toggleClass("icon__button-active");
+    $(".user-nav__btn").on("click", function () {
+        $(".user-nav__button").toggleClass("user-nav__button-active");
     })
 
 
-    var mixer = mixitup('.categories__product-item');
+
+    var mixer = mixitup('.popular-categories__product');
+
 
 });
 
+new Swiper('.customer-reviews__container', {
+    navigation: {
+        nextEl: '.customer-reviews__button-next ',
+        prevEl: '.customer-reviews__button-prev'
+    },
+    pagination: {
+        el: '.customer-reviews__pagination',
+        clickable: true,
+    },
+
+
+});

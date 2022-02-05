@@ -3,46 +3,11 @@
 @import 'vars';
 @import 'global';
 
-@import '../scss/components/header';
-@import '../scss/components/hero';
-@import '../scss/components/categories';
-@import '../scss/components/footer';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import 'media';
+@import 'components/header';
+@import 'components/popular-categories';
+@import 'components/hero';
+@import 'components/our-services';
+@import 'components/best-restaurants';
+@import 'components/customer-reviews';
+@import 'components/our-app';
+@import 'components/footer';

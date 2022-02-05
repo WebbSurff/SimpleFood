@@ -1,0 +1,82 @@
+.our-services {
+
+    margin-bottom: 118px;
+
+    &__box {
+        padding: 70px 0;
+        max-width: 1030px;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &__content {
+        margin-left: auto;
+        max-width: 470px;
+    }
+
+    &__title,
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        font-size: 20px;
+
+        p {
+            opacity: 0.9;
+        }
+    }
+
+    &__list {
+        margin-bottom: 36px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 23px;
+        }
+    }
+
+    &__subtitle {
+        position: relative;
+        padding-left: 64px;
+        font-size: 23px;
+        color: $darkBlue-900;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            left: 0;
+        }
+
+        &--timer {
+            &::before {
+                background-image: url('../images/sprite.svg#timer');
+            }
+        }
+
+        &--delivery {
+            &::before {
+                background-image: url('../images/sprite.svg#delivery');
+            }
+        }
+
+        &--resturent {
+            &::before {
+                background-image: url('../images/sprite.svg#resturent');
+            }
+        }
+    }
+
+    &__link {
+        padding: 12px 32px;
+        font-size: 18px;
+        letter-spacing: 0.03em;
+    }
+}
