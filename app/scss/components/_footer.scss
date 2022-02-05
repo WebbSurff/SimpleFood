@@ -89,7 +89,7 @@
 
         &:focus {
             border-radius: 5px;
-            box-shadow: 0 0 0 2px #FF6838;
+            box-shadow: 0 0 0 2px $orange-900;
         }
 
         &:hover::placeholder {
@@ -125,7 +125,7 @@
         }
 
         &:focus {
-            background: rgba(255, 122, 80, 0.1);
+            background-color: $rgba-100;
             color: $orange-900;
             box-shadow: $boxshadow-focus;
         }

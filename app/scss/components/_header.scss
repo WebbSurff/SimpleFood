@@ -87,7 +87,7 @@
         transition: background-color 0.3s, box-shadow 0.3s;
 
         &:focus {
-            background-color: rgba(255, 122, 80, 0.1);
+            background-color: $rgba-100;
             box-shadow: $boxshadow-focus;
             border-radius: 5px;
         }
