@@ -1,13 +1,10 @@
 .header {
 
-		&__inner {
-            padding: 60px 0;
-		}
-
-		&__top {
-            display: flex;
-            align-items: center;
-		}
+    &__top {
+        padding: 60px 0;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .logo {
@@ -15,184 +12,190 @@
     transition: color 0.4s, box-shadow 0.3s, opacity 0.3s;
     border-radius: 5px;
     display: inline-block;
-    
-        &:focus {
-            box-shadow: $boxshadow-focus;
-            border-radius: 5px;
-        }
 
-        &:hover {
-            opacity: 0.8;
-        }
+    &:focus {
+        box-shadow: $boxshadow-focus;
+        border-radius: 5px;
+    }
 
-        &:active {
-            opacity: 0.5;
-        }
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
 }
 
 .menu {
     display: flex;
     margin-right: 60px;
 
-		&__list:not(:last-child) {
-            margin-right: 45px;
-		}
-
-		&__link {
-            color: $default-color;
-            font-size: 18px;
-            line-height: 1;
-            transition: color 0.4s, box-shadow 0.3s;
-            border-radius: 5px;
-
-            &:focus {
-                box-shadow: $boxshadow-focus;
-                border-radius: 5px
-            }
-
-            &:hover {
-                color: $accent-color;
-            }
-
-            &:active {
-                color: $default-color;
-                text-shadow: $textshadow-active;
-            }
-		}
-
-        &__link--active {
-            color: $accent-color;
+    &__list {
+        &:not(:last-child) {
+            margin-right: 39px;
         }
+    }
+
+    &__link {
+        color: $dark;
+        font-size: 18px;
+        line-height: 1;
+        transition: color 0.4s, box-shadow 0.3s;
+        border-radius: 5px;
+
+        &:focus {
+            box-shadow: $boxshadow-focus;
+            border-radius: 5px
+        }
+
+        &:hover {
+            color: $orange-900;
+        }
+
+        &:active {
+            color: $dark;
+            text-shadow: $textshadow-active;
+        }
+    }
+
+    &__link--active {
+        color: $orange-900;
+    }
 }
 
-.icon {
+.user-nav {
     display: flex;
 
-        &__list:not(:last-child) {
+    &__item {
+        display: flex;
+
+        &:not(:last-child) {
             margin-right: 10px;
         }
+    }
 
-		&__link,
-        &__btn {
-           position: relative;
-           width: 44px;
-           height: 44px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           border-radius: 5px;
-           transition: background-color 0.3s, box-shadow 0.3s;
+    &__basket,
+    &__btn {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
 
-            &:focus {
-                background-color: rgba(255, 122, 80, 0.1);
-                box-shadow: $boxshadow-focus;
-                border-radius: 5px;
-            }
-
-            &:hover {
-                background-color: $accent-color;
-            }
-
-            &:active {
-                background-color: $bg-active;
-            }
-        }
-        
-        &__form {
-            display: flex;
-        }
-
-        &__input {
-            padding: 0 ;
-            border-radius: 50px;
-            transition: all 0.8s ease;
-            border: transparent;
-            outline: $accent-color;
-            background-color: $bg-total;
-            font-size: 18px;
-            width: 0;
-
-            &-active {
-                width:260px;
-                padding:0 40px 0 15px;
-                color: $default-color;
-                outline: $accent-color;
-                border-radius:50px;
-                cursor: pointer;
-                border: 3px solid $accent-color;
-            }
-        }
-        
-        &__button {
-            font-size: 14px;
+        &:focus {
+            background-color: rgba(255, 122, 80, 0.1);
+            box-shadow: $boxshadow-focus;
             border-radius: 5px;
-            padding: 0;
-            font-size: 0;
-            transition: all 0.5s;
-            line-height: 1.3;
-            background-color: $accent-color;
-            color: #fff;
-            
-            &-active {
-                margin: 0 10px;
-                padding: 7px 16px;
-                font-size: 14px;
-            }
+        }
+
+        &:hover {
+            background-color: $orange-900;
+        }
+
+        &:active {
+            background-color: $bg-active;
+        }
+    }
+
+    &__form {
+        display: flex;
+    }
+
+    &__input {
+        padding: 0;
+        width: 0;
+        border-radius: 50px;
+        transition: all 0.8s ease;
+        border: transparent;
+        outline: $orange-900;
+        background-color: $silver-100;
+        font-size: 18px;
+
+        &-active {
+            width: 260px;
+            padding: 0 40px 0 15px;
+            color: $dark;
+            outline: $orange-900;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 3px solid $orange-900;
+        }
+    }
+
+    &__button {
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 0;
+        font-size: 0;
+        transition: all 0.5s;
+        line-height: 1.3;
+        background-color: $orange-900;
+        color: $white;
+
+        &-active {
+            margin: 0 10px;
+            padding: 7px 16px;
+            font-size: 14px;
+        }
 
     }
-        
 
 
-        &__btn::after,
-        &__link::after {
-            content: '';
-            position: absolute;
-            width: 21px;
-            height: 23px;
-            background-repeat: no-repeat;
-        }
-        
-        &__btn::after {
-            background-image: url('../images/icons/search.svg');
-        }
 
-        &__link::after {
-            background-image: url('../images/icons/cart.svg')
-        }
+    &__btn::after,
+    &__basket::after {
+        content: '';
+        position: absolute;
+        width: 21px;
+        height: 23px;
+        background-repeat: no-repeat;
+    }
 
-        &__btn:hover::after, 
-        &__link:hover::after {
-           filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(149deg) brightness(103%) contrast(200%);
-        }
+    &__btn::after {
+        background-image: url('../images/sprite.svg#search');
+    }
 
-        &__btn:active::after, 
-        &__link:active::after {
-            filter: none;
-        }
+    &__basket::after {
+        background-image: url('../images/sprite.svg#cart')
+    }
 
-        &__numb {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 10px;
-            color: #fff;
-            width: 14px;
-            height: 14px;
-            background-color: $accent-color;
-            border-radius: 50%;
-            text-align: center;
-            z-index: 2;
-            transition: color 0.3s, background-color 0.3s;
-        }
+    &__btn:hover::after,
+    &__basket:hover::after {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(149deg) brightness(103%) contrast(200%);
+    }
 
-        &__link:hover &__numb {
-            color: $accent-color;
-            background-color: #fff;
-        }
+    &__btn:active::after,
+    &__basket:active::after {
+        filter: none;
+    }
 
-        &__link:active &__numb {
-            color: #fff;
-            background-color: $accent-color;
-        }
+    &__numb {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 10px;
+        color: $white;
+        width: 14px;
+        height: 14px;
+        background-color: $orange-900;
+        border-radius: 50%;
+        text-align: center;
+        z-index: 2;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    &__basket:hover &__numb {
+        color: $orange-900;
+        background-color: $white;
+    }
+
+    &__basket:active &__numb {
+        color: $white;
+        background-color: $orange-900;
+    }
 
 }
