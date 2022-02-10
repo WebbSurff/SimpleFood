@@ -11,6 +11,12 @@ body {
     line-height: 1.5;
     color: $dark;
     font-size: 20px;
+    transition: background-color 0.5s;
+}
+
+.lock {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .wrapper {
@@ -43,215 +49,20 @@ body {
 }
 
 .title {
-    font-family: $rubik;
     font-weight: 600;
     font-size: 35px;
     line-height: 1.3;
     color: $darkBlue-900;
-}
 
-.button {
-    color: $white;
-    font-size: 14px;
-    line-height: 1.3;
-    background-color: $orange-900;
-    border-radius: 5px;
-    padding: 7px 16px;
-    transition: background-color 0.3s, color 0.4s;
-
-    &:focus {
-        border-radius: 5px;
-        color: $orange-900;
-        color: $white;
-        box-shadow: $boxshadow-focus;
+    @include m($md) {
+        font-size: 30px;
     }
 
-    &:hover {
-        background-color: $bgc-100;
-        box-shadow: 0 5px 12px $rgba-200, $boxshadow-focus;
-        color: $orange-900;
+    @include hl {
+        font-size: 30px;
     }
 
-    &:active {
-        background-color: $rgba-100;
-    }
-
-}
-
-.more-detailed {
-
-    color: $darkBlue-900;
-    text-decoration: underline;
-    border-radius: 5px;
-    transition: color 0.4s, box-shadow 0.3s;
-
-    &:focus {
-        box-shadow: $boxshadow-focus;
-        border-radius: 5px
-    }
-
-    &:hover {
-        color: $orange-900;
-        text-decoration: none;
-    }
-
-    &:active {
-        color: $dark;
-        text-shadow: $textshadow-active;
-    }
-
-}
-
-.product-card {
-
-    background-color: $white;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px $silver-200;
-    padding: 20px 15px;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-        box-shadow: 0 0 0 1px $orange-900;
-    }
-
-
-    &__link {
-        margin-bottom: 9px;
-        display: grid;
-        grid-template: auto minmax(45px, auto)/1fr;
-    }
-
-    &__img {
-        margin: 0 auto 10px;
-    }
-
-    &__title {
-        font-size: 15px;
-        font-family: $rubik;
-        font-weight: 400;
-        line-height: 1.1;
-        margin-bottom: 10px;
-    }
-
-    &__price {
-        color: $darkBlue-900;
-        font-family: $rubik;
-        font-weight: 600;
-        font-size: 15px;
-    }
-
-    &__btn {
-        justify-self: center;
-        align-self: center;
-    }
-
-}
-
-.restaurants-cards {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: $white;
-    display: block;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-        box-shadow: $boxShadow-500;
-    }
-
-    &__img {
-        display: block;
-        transition: opacity 0.3s;
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $white;
-        padding: 15px 22px 23px 20px;
-        border-radius: 10px;
-    }
-
-    &__title {
+    @include m($sm) {
         font-size: 24px;
-        line-height: 1.3;
-        font-weight: 400;
-        margin-bottom: 20px;
-    }
-
-    &__time {
-        padding-left: 32px;
-        font-family: $rubik;
-        font-weight: 300;
-        font-size: 17px;
-        letter-spacing: 0.02em;
-        line-height: 1.7;
-        opacity: 0.9;
-        position: relative;
-
-        &::before {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background-repeat: no-repeat;
-            background-image: url('../images/icons/timer-restaurants.svg');
-            left: 0;
-            bottom: 0;
-        }
-    }
-
-    &__btn {
-        align-self: flex-end;
-        padding: 14px 38px 16px 40px;
-        background-repeat: no-repeat;
-        position: relative;
-        border-radius: 20px;
-        background-color: $orange-900;
-        transition: box-shadow 0.3s, background-color 0.3s;
-
-        &::before {
-            content: '';
-            width: 24px;
-            height: 24px;
-            top: 15%;
-            left: 32%;
-            background-image: url('../images/icons/arrow-right.svg');
-            position: absolute;
-            transition: transform 0.3s;
-        }
-
-        &:focus {
-            box-shadow: $boxshadow-focus;
-            background-color: $bg-active;
-        }
-
-        &:hover {
-            box-shadow: $boxshadow-focus;
-            background-color: $white;
-        }
-
-        &:active {
-            background-color: $bg-active;
-        }
-
-        &:focus::before {
-            filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
-        }
-
-        &:hover::before {
-            transform: translateX(50%);
-            filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
-        }
-
-        &:active::before {
-            transform: translateX(0%);
-            filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
-        }
-
     }
 }

@@ -1,7 +1,13 @@
 @import 'reset';
 @import 'fonts';
 @import 'vars';
+@import 'mixins';
 @import 'global';
+
+
+@import 'blocks/common';
+@import 'blocks/individual-parts';
+
 
 @import 'components/header';
 @import 'components/popular-categories';

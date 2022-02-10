@@ -1,0 +1,59 @@
+.button {
+    color: $white;
+    font-size: 14px;
+    line-height: 1.3;
+    background-color: $orange-900;
+    border-radius: 5px;
+    padding: 7px 16px;
+    transition: background-color 0.3s, color 0.4s;
+
+    &:focus {
+        border-radius: 5px;
+        color: $orange-900;
+        color: $white;
+        box-shadow: $boxshadow-focus;
+    }
+
+    &:hover {
+        background-color: $bgc-100;
+        box-shadow: 0 5px 12px $rgba-200, $boxshadow-focus;
+        color: $orange-900;
+    }
+
+    &:active {
+        background-color: $rgba-100;
+    }
+
+}
+
+.more-detailed {
+
+    color: $darkBlue-900;
+    text-decoration: underline;
+    border-radius: 5px;
+    transition: color 0.4s, box-shadow 0.3s;
+
+    &:focus {
+        box-shadow: $boxshadow-focus;
+        border-radius: 5px
+    }
+
+    &:hover {
+        color: $orange-900;
+        text-decoration: none;
+    }
+
+    &:active {
+        color: $dark;
+        text-shadow: $textshadow-active;
+    }
+
+    @include m($sm) {
+        font-size: 16px;
+    }
+
+    @include hl {
+        font-size: 16px;
+    }
+
+}

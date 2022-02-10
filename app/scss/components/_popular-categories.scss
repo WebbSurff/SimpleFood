@@ -2,25 +2,89 @@
     text-align: center;
     margin-bottom: 110px;
 
+    @include m($lg) {
+        margin-bottom: 80px;
+    }
+
+    @include m($md) {
+        margin-bottom: 50px;
+    }
+
+    @include hl {
+        margin-bottom: 20px;
+    }
+
+    @include m($sm) {
+        margin-bottom: 20px;
+    }
+
     &__product {
         display: grid;
         grid-gap: 30px;
-        grid-template-columns: repeat(5, minmax(170px, 210px));
+        grid-template-columns: repeat(5, minmax(153px, 210px));
         margin-bottom: 60px;
+
+        @include m($xl) {
+            grid-gap: 20px;
+        }
+
+        @include m($lg) {
+            grid-template-columns: repeat(4, minmax(153px, 210px));
+            grid-gap: 19px;
+            margin-bottom: 40px;
+        }
+
+        @include m($md) {
+            grid-template-columns: repeat(3, minmax(153px, 210px));
+            grid-gap: 25px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        @include m($sm) {
+            grid-template-columns: repeat(2, minmax(153px, 210px));
+            grid-gap: 9px 5px;
+        }
     }
 
     &__title {
         margin-bottom: 60px;
+
+        @include m($lg) {
+            margin-bottom: 40px;
+        }
+
+        @include hl {
+            margin-bottom: 30px;
+        }
+
+        @include m($md) {
+            margin-bottom: 30px;
+        }
     }
 
     &__list {
         display: flex;
         margin-bottom: 45px;
+
+        @include m($lg) {
+            margin-bottom: 35px;
+            overflow: scroll;
+        }
+
+        @include m($sm) {
+            margin-bottom: 30px;
+        }
     }
 
     &__item {
         &:not(:last-child) {
             margin-right: 20px;
+
+            @include m($sm) {
+                margin-right: 10px;
+            }
+
         }
     }
 
@@ -58,6 +122,25 @@
             height: 44px;
             left: 32px;
             top: 13px;
+            background-repeat: no-repeat;
+
+            @include m($xl) {
+                width: 39px;
+                height: 39px;
+            }
+
+
+            @include m($lg) {
+                width: 35px;
+                height: 35px;
+            }
+
+            @include m($sm) {
+                width: 20px;
+                height: 20px;
+                left: 17px;
+                top: 10px;
+            }
         }
 
         &--burger {
@@ -82,6 +165,14 @@
             &::before {
                 background-image: url('../images/sprite.svg#asia');
             }
+
+            @include m($lg) {
+                width: 210px;
+            }
+
+            @include m($sm) {
+                width: 170px;
+            }
         }
 
         &--sets {
@@ -97,6 +188,22 @@
         &:active::before {
             filter: none;
         }
+
+        @include m($xl) {
+            font-size: 17px;
+            padding: 22px 27px 23px 78px;
+        }
+
+        @include m($lg) {
+            padding: 22px 12px 21px 71px;
+            font-size: 15px;
+        }
+
+        @include m($sm) {
+            padding: 12px 16px 12px 41px;
+            font-size: 14px;
+        }
+
     }
 
     .mixitup-control-active {
@@ -108,4 +215,17 @@
         }
     }
 
+    &__detailed {
+
+        @include hl {
+            font-size: 16px;
+        }
+
+        @include m($sm) {
+            font-size: 20px;
+        }
+    }
+
 }
+
+// product-card in individual-parts

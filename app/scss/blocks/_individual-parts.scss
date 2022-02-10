@@ -1,0 +1,492 @@
+.logo {
+    margin-right: auto;
+    transition: color 0.4s, box-shadow 0.3s, opacity 0.3s;
+    border-radius: 5px;
+    display: inline-block;
+
+    &:focus {
+        box-shadow: $boxshadow-focus;
+        border-radius: 5px;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+.menu {
+    display: flex;
+    margin-right: 52px;
+
+    @include m($xl) {
+        margin-right: 15px;
+    }
+
+    @include m($lg) {
+        transform: translateX(-200%);
+        flex-direction: column;
+        z-index: 30;
+        left: 0;
+        padding: 25px 0 25px 15px;
+        border-top: 1px solid $silver-200;
+        border-bottom: 1px solid $silver-200;
+        margin-right: 0;
+        margin-bottom: 40px;
+
+        &--active {
+            transform: translateX(0%);
+        }
+    }
+
+    @include hl {
+        margin-bottom: 8px;
+        padding: 15px 0 15px 15px;
+    }
+
+    &__list {
+        &:not(:last-child) {
+            margin-right: 46px;
+        }
+
+        @include m($lg) {
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__link {
+        color: $dark;
+        font-size: 18px;
+        line-height: 1;
+        transition: color 0.4s, box-shadow 0.3s;
+        border-radius: 5px;
+
+        &:focus {
+            box-shadow: $boxshadow-focus;
+            border-radius: 5px
+        }
+
+        &:hover {
+            color: $orange-900;
+        }
+
+        &:active {
+            color: $dark;
+            text-shadow: $textshadow-active;
+        }
+
+        &--active {
+            color: $orange-900;
+
+        }
+
+        @include m($lg) {
+            display: block;
+        }
+    }
+
+}
+
+.user-nav {
+    display: flex;
+
+    &__item {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-right: 5px;
+
+            @include m($sm) {
+                margin-right: 14px;
+            }
+        }
+    }
+
+    &__basket,
+    &__btn {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:focus {
+            background-color: $rgba-100;
+            box-shadow: $boxshadow-focus;
+            border-radius: 5px;
+        }
+
+        &:hover {
+            background-color: $orange-900;
+        }
+
+        &:active {
+            background-color: $bg-active;
+        }
+    }
+
+    &__form {
+        display: flex;
+
+        @include m($lg) {
+            width: 0;
+        }
+    }
+
+    &__input {
+        padding: 0;
+        width: 0;
+        border-radius: 50px;
+        transition: all 0.8s ease;
+        border: transparent;
+        outline: $orange-900;
+        background-color: $silver-100;
+        font-size: 18px;
+        visibility: hidden;
+
+        &-active {
+            width: 260px;
+            padding: 0 40px 0 15px;
+            color: $dark;
+            outline: $orange-900;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 3px solid $orange-900;
+            visibility: visible;
+
+            @include m($lg) {
+                position: absolute;
+                right: 0;
+                width: 100%;
+                height: 55px;
+                z-index: 30;
+                top: 32px;
+                padding: 0 55px 0 51px;
+            }
+
+            @include hl {
+                top: 5px;
+            }
+
+            @include m($sm) {
+                top: 20px;
+                height: 49px;
+            }
+        }
+    }
+
+    &__close {
+        display: none;
+        transition: transform 0.8s;
+
+        @include m($lg) {
+            display: block;
+            position: absolute;
+            left: 20px;
+            z-index: 40;
+            top: 48px;
+            transform: translateX(-500%);
+
+            &-img {
+                width: 25px;
+                height: 20px;
+            }
+
+            &--active {
+                transform: translateX(0%);
+            }
+        }
+
+        @include hl {
+            top: 20px;
+        }
+
+        @include m($sm) {
+            top: 33px;
+        }
+    }
+
+    &__button {
+        border-radius: 5px;
+        padding: 0;
+        font-size: 0;
+        transition: all 0.5s;
+        line-height: 1.3;
+        background-color: $orange-900;
+        color: $white;
+        visibility: hidden;
+
+        &-active {
+            margin: 0 10px;
+            padding: 7px 16px;
+            font-size: 14px;
+            visibility: visible;
+
+            @include m($lg) {
+                position: absolute;
+                z-index: 30;
+                right: 15px;
+                background-image: url(../images/sprite.svg#search);
+                font-size: 0;
+                background-repeat: no-repeat;
+                width: 20px;
+                height: 20px;
+                top: 47px;
+                padding: 13px;
+                background-color: transparent;
+            }
+
+            @include hl {
+                top: 20px;
+            }
+
+            @include m($sm) {
+                top: 30px;
+            }
+        }
+
+    }
+
+    &__btn,
+    &__basket {
+        &::after {
+            content: '';
+            position: absolute;
+            width: 21px;
+            height: 23px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__btn {
+        &::after {
+            background-image: url('../images/sprite.svg#search');
+        }
+    }
+
+    &__basket {
+        &::after {
+            background-image: url('../images/sprite.svg#cart')
+        }
+    }
+
+    &__btn:hover::after,
+    &__basket:hover::after {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(149deg) brightness(103%) contrast(200%);
+    }
+
+    &__btn:active::after,
+    &__basket:active::after {
+        filter: none;
+    }
+
+    &__numb {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 10px;
+        color: $white;
+        width: 14px;
+        height: 14px;
+        background-color: $orange-900;
+        border-radius: 50%;
+        text-align: center;
+        z-index: 2;
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    &__basket:hover &__numb {
+        color: $orange-900;
+        background-color: $white;
+    }
+
+    &__basket:active &__numb {
+        color: $white;
+        background-color: $orange-900;
+    }
+
+    &__burger-img {
+        display: none;
+
+        @include m($lg) {
+            display: flex;
+            width: 36px;
+            height: 23px;
+        }
+    }
+
+}
+
+.product-card {
+
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px $silver-200;
+    padding: 20px 15px;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 0 1px $orange-900;
+    }
+
+
+    &__link {
+        margin-bottom: 9px;
+        display: grid;
+        grid-template: auto minmax(45px, auto)/1fr;
+    }
+
+    &__img {
+        margin: 0 auto 10px;
+    }
+
+    &__title {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        color: $darkBlue-900;
+        font-family: $rubik;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    &__btn {
+        justify-self: center;
+        align-self: center;
+    }
+
+}
+
+.restaurants-cards {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: $white;
+    display: block;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: $boxShadow-500;
+    }
+
+    &__link-img {
+        display: block;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__img {
+        @include m($xs) {
+            width: 320px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white;
+        padding: 15px 22px 23px 20px;
+        border-radius: 10px;
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.3;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    &__time {
+        padding-left: 32px;
+        font-weight: 300;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+        line-height: 1.7;
+        opacity: 0.9;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background-repeat: no-repeat;
+            background-image: url('../images/icons/timer-restaurants.svg');
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &__btn {
+        align-self: flex-end;
+        padding: 14px 38px 16px 40px;
+        background-repeat: no-repeat;
+        position: relative;
+        border-radius: 20px;
+        background-color: $orange-900;
+        transition: box-shadow 0.3s, background-color 0.3s;
+
+        &::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            top: 15%;
+            left: 32%;
+            background-image: url('../images/icons/arrow-right.svg');
+            position: absolute;
+            transition: transform 0.3s;
+        }
+
+        &:focus {
+            box-shadow: $boxshadow-focus;
+            background-color: $bg-active;
+        }
+
+        &:hover {
+            box-shadow: $boxshadow-focus;
+            background-color: $white;
+        }
+
+        &:active {
+            background-color: $bg-active;
+        }
+
+        &:focus {
+            &::before {
+                filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
+            }
+        }
+
+        &:hover {
+            &::before {
+                transform: translateX(50%);
+                filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
+            }
+        }
+
+        &:active {
+            &::before {
+                transform: translateX(0%);
+                filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
+            }
+        }
+
+    }
+}

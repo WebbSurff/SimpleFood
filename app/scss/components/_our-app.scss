@@ -1,20 +1,59 @@
 .our-app {
     margin-bottom: 120px;
 
+    @include m($lg) {
+        margin-bottom: 90px;
+    }
+
+    @include m($md) {
+        margin-bottom: 50px;
+    }
+
+    @include m($sm) {
+        margin-bottom: 38px;
+    }
+
     &__content {
         padding: 42px 0 40px 0;
         background-repeat: no-repeat;
         background-position: right;
         background-size: contain;
+
+        @include m($xl) {
+            background-size: 49%;
+        }
+
+        @include m($lg) {
+            background-size: 0;
+            padding: 0;
+        }
     }
 
     &__title,
     &__text {
         max-width: 540px;
+
+        @include m($lg) {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        @include m($sm) {
+            text-align: left;
+            max-width: 345px;
+        }
     }
 
     &__title {
         margin-bottom: 49px;
+
+        @include m($lg) {
+            margin-bottom: 30px;
+        }
+
+        @include m($sm) {
+            margin-bottom: 15px;
+        }
     }
 
     &__text {
@@ -22,11 +61,27 @@
 
         p {
             opacity: 0.9;
+
+            @include m($sm) {
+                font-size: 14px;
+            }
+        }
+
+        @include m($sm) {
+            margin-bottom: 15px;
         }
     }
 
     &__list {
         display: flex;
+
+        @include m($lg) {
+            justify-content: center;
+        }
+
+        @include m($sm) {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
@@ -52,12 +107,12 @@
 
         &--ios {
             width: 120px;
-            background-image: url('../images/app-store.jpg');
+            background-image: url('../images/app-store.svg');
         }
 
         &--android {
             width: 135px;
-            background-image: url('../images/google-play.jpg');
+            background-image: url('../images/google-play.svg');
         }
     }
 }

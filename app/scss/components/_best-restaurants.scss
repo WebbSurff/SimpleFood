@@ -1,16 +1,110 @@
 .best-restaurants {
-    text-align: center;
     margin-bottom: 120px;
+    text-align: center;
+
+    @include m($lg) {
+        margin-bottom: 90px;
+    }
+
+    @include m($md) {
+        margin-bottom: 50px;
+    }
+
+    @include m($sm) {
+        margin-bottom: 34px;
+    }
 
     &__title {
         margin-bottom: 45px;
         font-size: 36px;
+
+        @include m($xl) {
+            margin-bottom: 30px;
+        }
+
+        @include hl {
+            font-size: 30px;
+        }
+
+        @include m($sm) {
+            font-size: 24px;
+        }
     }
 
+
     &__list {
-        text-align: left;
         display: grid;
         grid-gap: 30px;
         grid-template-columns: repeat(3, minmax(345px, 370px));
+        min-width: 0;
+
+        @include m($xl) {
+            grid-template-columns: repeat(2, minmax(345px, 370px));
+            justify-content: center;
+        }
+
+        @include m($md) {
+            display: flex;
+            justify-content: flex-start;
+            grid-gap: 0;
+        }
     }
+
+    &__item {
+        text-align: left;
+
+        @include m($md) {
+            display: flex;
+        }
+
+    }
+
+    .swiper {
+        @include m($md) {
+            width: 360px;
+            padding-bottom: 50px;
+        }
+
+        @include m($sm) {
+            width: 347px;
+        }
+
+        @include m($xs) {
+            width: 295px;
+        }
+    }
+
+
+
+    &__pagination {
+        position: absolute;
+    }
+
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        background-color: $gray;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $orange-900;
+    }
+
+    .swiper-pagination-bullet {
+
+        &:not(:last-child) {
+            margin-right: 11px;
+        }
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: -2px;
+    }
+
 }
+
+
+// restaurants-cards in individual-parts

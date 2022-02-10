@@ -105,13 +105,14 @@ button,
 textarea,
 select {
     font: inherit;
+    appearance: none;
 }
 
 
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
-input::-webkit-search-results-decoration { 
+input::-webkit-search-results-decoration {
     display: none;
 }
 

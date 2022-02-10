@@ -3,21 +3,50 @@
     &__top {
         padding-bottom: 46px;
         display: flex;
+
+        @include m($xl) {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @include m($sm) {
+            flex-direction: column;
+        }
     }
 
     &__list {
         column-count: 3;
         column-gap: 5px;
         margin-right: 70px;
+
+        @include m($xl) {
+            margin-right: 0;
+            order: 2;
+            column-gap: 0;
+            column-count: 2;
+        }
+
+        @include m($lg) {
+            column-count: 1;
+        }
     }
 
     &__item {
         &--margin {
             margin-left: 30px;
+
+            @include m($xl) {
+                margin-left: 0;
+            }
         }
 
         &:not(:last-child) {
             margin-bottom: 12px;
+
+            @include m($sm) {
+                margin-bottom: 13px;
+            }
         }
     }
 
@@ -49,7 +78,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include m($md) {
+            padding: 22px 15px;
+        }
     }
+
 
     &__copy {
         font-size: 14px;
@@ -96,11 +130,12 @@
             color: $darkBlue-900;
             opacity: 0.9;
         }
+
+
     }
 
     &__btn {
         padding: 13px 38px 13px 69px;
-        font-family: $rubik;
         font-weight: 600;
         position: relative;
 
@@ -138,6 +173,14 @@
         &:active {
             background-color: $bg-active;
         }
+    }
+
+    @include m($xl) {
+        margin-right: 0;
+    }
+
+    @include m($xl) {
+        margin-bottom: 30px;
     }
 
 }
@@ -209,6 +252,13 @@
         }
     }
 
+    @include m($xl) {
+        order: 1;
+    }
+
+    @include m($sm) {
+        margin-bottom: 0;
+    }
 }
 
 .social {
@@ -283,4 +333,7 @@
 
     }
 
+    @include m($md) {
+        margin-bottom: 30px;
+    }
 }
