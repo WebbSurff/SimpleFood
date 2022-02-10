@@ -1,44 +1,122 @@
 .our-services {
-
     margin-bottom: 118px;
+
+    @include m($lg) {
+        margin-bottom: 90px;
+    }
+
+    @include m($md) {
+        margin-bottom: 50px;
+    }
+
+    @include m($sm) {
+        margin-bottom: 30px;
+    }
 
     &__box {
         padding: 70px 0;
         max-width: 1030px;
         margin: 0 auto;
-        background-repeat: no-repeat;
-        background-size: contain;
+        position: relative;
+
+        @include m($lg) {
+            padding: 45px 0;
+        }
+
+        @include hl {
+            padding: 20px 0;
+        }
+
+
     }
 
     &__content {
         margin-left: auto;
         max-width: 470px;
+
+        @include m($sm) {
+            margin-left: 0;
+            max-width: 345px;
+        }
+
+    }
+
+    &__bg {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 438px;
+        top: 10px;
+        height: 594px;
+        left: 0;
+        z-index: -1;
+
+        @include m($lg) {
+            opacity: 0.4;
+        }
+
+        @include m($md) {
+            height: 490px;
+            top: 19px;
+            width: 347px;
+        }
+
+        @include hl {
+            opacity: 0.4;
+            height: 463px;
+            width: 345px;
+        }
+
+
+        @include m($sm) {
+            height: 463px;
+            width: 345px;
+        }
+
+        @include m($xs) {
+            width: 300px;
+        }
     }
 
     &__title,
     &__text {
         margin-bottom: 30px;
+
+        @include hl {
+            margin-bottom: 20px;
+        }
     }
 
     &__text {
         font-size: 20px;
 
+        @include m($sm) {
+            margin-bottom: 34px;
+        }
+
         p {
             opacity: 0.9;
+
+            @include m($md) {
+                font-size: 18px;
+            }
+
+            @include m($sm) {
+                font-size: 16px;
+            }
         }
     }
 
     &__list {
         margin-bottom: 36px;
-    }
 
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 23px;
+        @include m($sm) {
+            margin-bottom: 27px;
         }
     }
 
-    &__subtitle {
+    &__item {
+
         position: relative;
         padding-left: 64px;
         font-size: 23px;
@@ -46,6 +124,19 @@
         font-weight: 400;
         letter-spacing: 0.02em;
 
+        @include m($md) {
+            font-size: 21px;
+        }
+
+        @include hl {
+            font-size: 21px;
+            padding-left: 45px;
+        }
+
+        @include m($sm) {
+            padding-left: 45px;
+            font-size: 17px;
+        }
 
         &::before {
             content: '';
@@ -53,6 +144,14 @@
             width: 34px;
             height: 34px;
             left: 0;
+
+            @include hl {
+                top: -5px;
+            }
+
+            @include m($sm) {
+                top: -4px;
+            }
         }
 
         &--timer {
@@ -72,11 +171,28 @@
                 background-image: url('../images/sprite.svg#resturent');
             }
         }
+
+        &:not(:last-child) {
+            margin-bottom: 23px;
+
+            @include hl {
+                margin-bottom: 15px;
+            }
+        }
     }
+
 
     &__link {
         padding: 12px 32px;
         font-size: 18px;
         letter-spacing: 0.03em;
+
+        @include m($md) {
+            font-size: 16px;
+        }
+
+        @include m($md) {
+            font-size: 14px;
+        }
     }
 }
