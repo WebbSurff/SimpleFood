@@ -97,6 +97,7 @@
 
     &__logo {
         margin-bottom: 22px;
+        display: inline-block;
     }
 
     &__input {
@@ -126,9 +127,12 @@
             box-shadow: 0 0 0 2px $orange-900;
         }
 
-        &:hover::placeholder {
-            color: $darkBlue-900;
-            opacity: 0.9;
+        &:hover {
+
+            &::placeholder {
+                color: $darkBlue-900;
+                opacity: 0.9;
+            }
         }
 
 

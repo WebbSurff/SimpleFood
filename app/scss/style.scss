@@ -2,11 +2,13 @@
 @import 'fonts';
 @import 'vars';
 @import 'mixins';
+@import 'libs';
 @import 'global';
 
 
 @import 'blocks/common';
 @import 'blocks/individual-parts';
+@import 'blocks/header-mobile';
 
 
 @import 'components/header';
@@ -17,3 +19,8 @@
 @import 'components/customer-reviews';
 @import 'components/our-app';
 @import 'components/footer';
+
+
+@import 'product-catalog/product-selection';
+@import 'product-catalog/best-offer';
+@import 'product-catalog/filter-mobile';

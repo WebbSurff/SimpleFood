@@ -18,94 +18,28 @@
 
             <header class="header">
                 <div class="container">
+
                     <nav class="header__top">
-                        <a class="logo" href="#">
-                            <picture>
-                                <source media="(max-height: 575px) and (orientation: landscape)"
-                                    srcset="images/logo.svg" width="115" height="23">
-                                <source media="(min-width: 560px)" srcset="images/logo.svg" width="200" height="39">
-                                <source media="(max-width: 560px)" srcset="images/logo.svg" width="115" height="23">
-
-                                <img class="logo__img" src="images/logo.svg" alt="логотип" width="200" height="39">
-                            </picture>
+                        <a class="logo header__logo" href="#">
+                            <img class="logo__img" src="images/logo.svg" alt="логотип" width="200" height="39">
                         </a>
-
-                        <div class="header__mobile">
-                            <button class="header__close-btn">
-                                <svg class="header__close-btn-img">
-                                    <use xlink:href="images/sprite.svg#close-btn"></use>
-                                </svg>
-                            </button>
-                            <a class="logo header__logo" href="#">
-                                <img class="logo__img" src="images/logo.svg" alt="логотип" width="200" height="39">
-                            </a>
-                            <ul class="menu">
-                                <li class="menu__list">
-                                    <a class="menu__link menu__link--active" href="#">
-                                        Главная
-                                    </a>
-                                </li>
-                                <li class="menu__list">
-                                    <a class="menu__link" href="#">
-                                        Блюда
-                                    </a>
-                                </li>
-                                <li class="menu__list">
-                                    <a class="menu__link" href="#">
-                                        Контакты
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <address class="header__address footer-address">
-
-                                <ul class="footer-address__list">
-                                    <li class="footer-address__item">
-                                        <a class="footer-address__link footer-address__link--location" href="#">
-                                            ул. Смирнова 2/3
-                                        </a>
-                                    </li>
-                                    <li class="footer-address__item">
-                                        <a class="footer-address__link footer-address__link--phone"
-                                            href="tel:79068057043">
-                                            79068057043
-                                        </a>
-                                    </li>
-                                    <li class="footer-address__item">
-                                        <a class="footer-address__link footer-address__link--mail"
-                                            href="mailto:support@sfood.com">
-                                            support@sfood.com
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <ul class="social">
-                                    <li class="social__item">
-                                        <a class="social__icon social__icon--facebook" href="#">
-                                            <span class="sr-only">
-                                                перейти в фэйсбук Simple Food
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a class="social__icon social__icon--twitter" href="#">
-                                            <span class="sr-only">
-                                                перейти в тритер Simple Food
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a class="social__icon social__icon--inst" href="#">
-                                            <span class="sr-only">
-                                                перейти в инстаграм Simple Food
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                            </address>
-                        </div>
-
+                        <ul class="header__menu menu">
+                            <li class="menu__list">
+                                <a class="menu__link menu__link--active" href="#">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#">
+                                    Блюда
+                                </a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
                         <ul class="user-nav">
                             <li class="user-nav__item">
 
@@ -149,15 +83,87 @@
                                     <span class="sr-only">
                                         Открыть мобильное меню
                                     </span>
-                                    <svg class="user-nav__burger-img">
-                                        <use xlink:href="images/sprite.svg#burger-menu"></use>
-                                    </svg>
                                 </button>
                             </li>
 
                         </ul>
-
                     </nav>
+
+                    <div class="header-mobile">
+                        <button class="header-mobile__close-btn">
+                            <svg class="header-mobile__close-btn-img">
+                                <use xlink:href="images/sprite.svg#close-btn"></use>
+                            </svg>
+                        </button>
+                        <a class="header-mobile__logo" href="#">
+                            <img src="images/logo.svg" alt="логотип" width="200" height="39">
+                        </a>
+
+                        <ul class="menu">
+                            <li class="menu__list">
+                                <a class="menu__link menu__link--active" href="#">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#">
+                                    Блюда
+                                </a>
+                            </li>
+                            <li class="menu__list">
+                                <a class="menu__link" href="#">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+
+                        <address class="header-mobile__address footer-address">
+
+                            <ul class="footer-address__list">
+                                <li class="footer-address__item">
+                                    <a class="footer-address__link footer-address__link--location" href="#">
+                                        ул. Смирнова 2/3
+                                    </a>
+                                </li>
+                                <li class="footer-address__item">
+                                    <a class="footer-address__link footer-address__link--phone" href="tel:79068057043">
+                                        79068057043
+                                    </a>
+                                </li>
+                                <li class="footer-address__item">
+                                    <a class="footer-address__link footer-address__link--mail"
+                                        href="mailto:support@sfood.com">
+                                        support@sfood.com
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="social">
+                                <li class="social__item">
+                                    <a class="social__icon social__icon--facebook" href="#">
+                                        <span class="sr-only">
+                                            перейти в фэйсбук Simple Food
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__icon social__icon--twitter" href="#">
+                                        <span class="sr-only">
+                                            перейти в твитер Simple Food
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a class="social__icon social__icon--inst" href="#">
+                                        <span class="sr-only">
+                                            перейти в инстаграм Simple Food
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </address>
+                    </div>
                 </div>
             </header>
 
@@ -486,9 +492,9 @@
                                                 <h3 class="restaurants-cards__title">
                                                     Blaze Pizza
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     11:00 - 22:00
-                                                </time>
+                                                </span>
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -511,9 +517,10 @@
                                                 <h3 class="restaurants-cards__title">
                                                     Pizza Runcho
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     12:00 - 21:00
-                                                </time>
+                                                </span>
+
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -535,9 +542,9 @@
                                                 <h3 class="restaurants-cards__title">
                                                     Pizza Hut
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     11:00 - 22:00
-                                                </time>
+                                                </span>
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -561,9 +568,9 @@
                                                 <h3 class="restaurants-cards__title">
                                                     McDonald`s
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     06:00 - 23:00
-                                                </time>
+                                                </span>
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -587,9 +594,9 @@
                                                 <h3 class="restaurants-cards__title">
                                                     KFC
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     06:00 - 23:30
-                                                </time>
+                                                </span>
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -614,9 +621,9 @@
                                                 <h3 class="restaurants-cards__title">
                                                     Star Burgers
                                                 </h3>
-                                                <time class="restaurants-cards__time">
+                                                <span class="restaurants-cards__time">
                                                     09:00 - 21:00
-                                                </time>
+                                                </span>
                                             </div>
                                             <a class="restaurants-cards__btn" href="#">
                                                 <span class="sr-only">
@@ -769,7 +776,7 @@
 
                     <div class="footer-subscribe">
                         <a class="logo footer-subscribe__logo" href="#">
-                            <img class="logo__img" src="images/logo.svg" alt="логотип" width="200" height="39">
+                            <img src="images/logo.svg" alt="логотип" width="200" height="39">
                         </a>
                         <form class="footer-subscribe__form" action="#">
                             <label class="sr-only" for="subscribe">
@@ -878,7 +885,7 @@
                             <li class="social__item">
                                 <a class="social__icon social__icon--twitter" href="#">
                                     <span class="sr-only">
-                                        перейти в тритер Simple Food
+                                        перейти в твитер Simple Food
                                     </span>
                                 </a>
                             </li>

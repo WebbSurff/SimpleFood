@@ -10,6 +10,10 @@
         margin-bottom: 50px;
     }
 
+    @include hl {
+        margin-bottom: 40px;
+    }
+
     @include m($sm) {
         margin-bottom: 41px;
     }
@@ -55,6 +59,16 @@
         @include m($lg) {
             margin-right: 0;
             margin-bottom: 29px;
+        }
+
+        @include m($md) {
+            width: 200px;
+            height: 200px;
+        }
+
+        @include hl {
+            width: 200px;
+            height: 200px;
         }
 
         @include m($sm) {
@@ -143,6 +157,15 @@
 
         transition: box-shadow 0.3s, border 0.3s;
 
+        &::before {
+            content: '';
+            position: absolute;
+            width: 17px;
+            height: 18px;
+            bottom: 21%;
+            background-repeat: no-repeat;
+        }
+
         &:focus {
             box-shadow: $boxshadow-focus;
         }
@@ -160,23 +183,16 @@
             top: 115px;
         }
 
+        @include m($lg) {
+            top: 82px;
+        }
+
         @include m($sm) {
             top: 33px;
         }
 
     }
 
-    &__button-next,
-    &__button-prev {
-        &::before {
-            content: '';
-            position: absolute;
-            width: 17px;
-            height: 18px;
-            bottom: 21%;
-            background-repeat: no-repeat;
-        }
-    }
 
     &__button-next {
         right: 39%;
@@ -196,7 +212,7 @@
         }
 
         @include m($md) {
-            right: 13%;
+            right: 23%;
         }
 
 
@@ -225,6 +241,10 @@
         }
 
         @include m($md) {
+            left: 22%;
+        }
+
+        @include m($sm) {
             left: 11%;
         }
     }

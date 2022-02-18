@@ -1,8 +1,6 @@
 .logo {
-    margin-right: auto;
     transition: color 0.4s, box-shadow 0.3s, opacity 0.3s;
     border-radius: 5px;
-    display: inline-block;
 
     &:focus {
         box-shadow: $boxshadow-focus;
@@ -27,7 +25,6 @@
     }
 
     @include m($lg) {
-        transform: translateX(-200%);
         flex-direction: column;
         z-index: 30;
         left: 0;
@@ -36,10 +33,6 @@
         border-bottom: 1px solid $silver-200;
         margin-right: 0;
         margin-bottom: 40px;
-
-        &--active {
-            transform: translateX(0%);
-        }
     }
 
     @include hl {
@@ -104,7 +97,7 @@
             margin-right: 5px;
 
             @include m($sm) {
-                margin-right: 14px;
+                margin-right: 9px;
             }
         }
     }
@@ -145,14 +138,23 @@
 
     &__input {
         padding: 0;
-        width: 0;
         border-radius: 50px;
-        transition: all 0.8s ease;
+        transition: width 0.8s, padding 0.8s, color 0.8s, transform 0.8s;
         border: transparent;
         outline: $orange-900;
         background-color: $silver-100;
-        font-size: 18px;
         visibility: hidden;
+        width: 0;
+
+        &::placeholder {
+            font-size: 18px;
+        }
+
+        @include m($lg) {
+            transform: translateX(-400%);
+            width: auto;
+            background-color: transparent;
+        }
 
         &-active {
             width: 260px;
@@ -165,9 +167,11 @@
             visibility: visible;
 
             @include m($lg) {
+                background-color: $silver-100;
+                transform: translateX(0%);
                 position: absolute;
-                right: 0;
-                width: 100%;
+                left: 11px;
+                width: 96%;
                 height: 55px;
                 z-index: 30;
                 top: 32px;
@@ -192,7 +196,7 @@
         @include m($lg) {
             display: block;
             position: absolute;
-            left: 20px;
+            left: 25px;
             z-index: 40;
             top: 48px;
             transform: translateX(-500%);
@@ -226,16 +230,21 @@
         color: $white;
         visibility: hidden;
 
+        @include m($lg) {
+            transform: translateX(500%);
+        }
+
         &-active {
             margin: 0 10px;
             padding: 7px 16px;
             font-size: 14px;
             visibility: visible;
+            transform: translateX(0%);
 
             @include m($lg) {
                 position: absolute;
                 z-index: 30;
-                right: 15px;
+                right: 25px;
                 background-image: url(../images/sprite.svg#search);
                 font-size: 0;
                 background-repeat: no-repeat;
@@ -258,7 +267,8 @@
     }
 
     &__btn,
-    &__basket {
+    &__basket,
+    &__burger {
         &::after {
             content: '';
             position: absolute;
@@ -267,6 +277,8 @@
             background-repeat: no-repeat;
         }
     }
+
+
 
     &__btn {
         &::after {
@@ -278,6 +290,39 @@
         &::after {
             background-image: url('../images/sprite.svg#cart')
         }
+
+        &:hover .user-nav__numb {
+            color: $orange-900;
+            background-color: $white;
+        }
+
+        &:active .user-nav__numb {
+            color: $white;
+            background-color: $orange-900;
+        }
+    }
+
+
+    &__burger {
+        display: none;
+
+        @include m($lg) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 44px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 28px;
+                height: 29px;
+                background-repeat: no-repeat;
+                background-image: url('../images/sprite.svg#burger-menu');
+            }
+        }
+
     }
 
     &__btn:hover::after,
@@ -305,25 +350,6 @@
         transition: color 0.3s, background-color 0.3s;
     }
 
-    &__basket:hover &__numb {
-        color: $orange-900;
-        background-color: $white;
-    }
-
-    &__basket:active &__numb {
-        color: $white;
-        background-color: $orange-900;
-    }
-
-    &__burger-img {
-        display: none;
-
-        @include m($lg) {
-            display: flex;
-            width: 36px;
-            height: 23px;
-        }
-    }
 
 }
 
@@ -334,6 +360,7 @@
     box-shadow: 0 0 0 1px $silver-200;
     padding: 20px 15px;
     transition: box-shadow 0.3s;
+    text-align: center;
 
     &:hover {
         box-shadow: 0 0 0 1px $orange-900;
@@ -355,6 +382,7 @@
         font-weight: 400;
         line-height: 1.1;
         margin-bottom: 10px;
+        @include line-clamp (2);
     }
 
     &__price {
@@ -404,6 +432,10 @@
         background-color: $white;
         padding: 15px 22px 23px 20px;
         border-radius: 10px;
+
+        @include hl {
+            padding: 9px 15px 16px 20px;
+        }
     }
 
     &__title {
@@ -411,6 +443,8 @@
         line-height: 1.3;
         font-weight: 400;
         margin-bottom: 20px;
+        @include line-clamp (1);
+        max-width: 245px;
     }
 
     &__time {
@@ -488,5 +522,59 @@
             }
         }
 
+    }
+}
+
+.breadcrumbs {
+    padding: 13px 0 18px;
+    background-color: $rgba-100;
+    margin-bottom: 60px;
+
+
+    @include m($lg) {
+        margin-bottom: 42px;
+    }
+
+    @include m($sm) {
+        padding: 15px 0 18px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: 4px;
+            padding-right: 10px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 12px;
+                right: -4px;
+                bottom: 7px;
+                background-repeat: no-repeat;
+                background-image: url('../images/sprite.svg#chevron');
+            }
+
+            @include m($sm) {
+                margin-right: 6px;
+                padding-right: 13px;
+            }
+        }
+
+
+
+    }
+
+    &__link {
+        color: $dark-100;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        line-height: 1.2;
     }
 }

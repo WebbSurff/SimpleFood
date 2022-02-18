@@ -9,6 +9,10 @@
         margin-bottom: 50px;
     }
 
+    @include hl {
+        margin-bottom: 40px;
+    }
+
     @include m($sm) {
         margin-bottom: 30px;
     }
@@ -89,6 +93,7 @@
 
     &__text {
         font-size: 20px;
+        @include line-clamp (5);
 
         @include m($sm) {
             margin-bottom: 34px;
@@ -116,6 +121,7 @@
     }
 
     &__item {
+        @include line-clamp(1);
 
         position: relative;
         padding-left: 64px;
