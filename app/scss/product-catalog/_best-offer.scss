@@ -1,59 +1,47 @@
-.best-restaurants {
-    margin-bottom: 120px;
-    text-align: center;
+.best-offer {
+    margin-bottom: 110px;
 
-    @include m($lg) {
-        margin-bottom: 34px;
+    @include m($xl) {
+        margin-bottom: 60px;
     }
 
-    @include hl {
+    @include m($lg) {
+        margin-bottom: 50px;
+    }
+
+    @include m($md) {
         margin-bottom: 40px;
     }
 
-
     &__title {
-        margin-bottom: 45px;
-        font-size: 36px;
+        margin-bottom: 60px;
 
         @include m($xl) {
-            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        @include m($lg) {
+            margin-bottom: 50px;
+        }
+
+        @include m($md) {
+            margin-bottom: 40px;
         }
 
         @include hl {
-            font-size: 30px;
-        }
-
-        @include m($sm) {
-            font-size: 24px;
+            margin-bottom: 20px;
         }
     }
 
+    &__subtitle {
+        @include line-clamp (2);
+        line-height: 1.3;
+        font-size: 24px;
+        font-weight: 400;
 
-    &__list {
-        display: grid;
-        grid-gap: 30px;
-        grid-template-columns: repeat(3, minmax(345px, 370px));
-        min-width: 0;
-
-        @include m($xl) {
-            grid-template-columns: repeat(2, minmax(345px, 370px));
-            justify-content: center;
+        @include hl {
+            font-size: 21px;
         }
-
-        @include m($lg) {
-            display: flex;
-            justify-content: flex-start;
-            grid-gap: 0;
-        }
-    }
-
-    &__item {
-        text-align: left;
-
-        @include m($lg) {
-            display: flex;
-        }
-
     }
 
     .swiper {
@@ -74,8 +62,6 @@
             width: 295px;
         }
     }
-
-
 
     &__pagination {
         position: absolute;
@@ -102,10 +88,9 @@
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-        bottom: -2px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+
     }
-
 }
-
-
-// restaurants-cards in individual-parts

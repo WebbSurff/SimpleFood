@@ -1,0 +1,74 @@
+.header-mobile {
+    display: none;
+
+
+
+    @include m($lg) {
+        display: block;
+        transform: translateX(-200%);
+        top: 0;
+        background-color: $white;
+        bottom: 0;
+        right: 40%;
+        left: 0;
+        z-index: 20;
+        position: absolute;
+        transition: transform 0.5s, background-color 0.3s;
+        padding-top: 35px;
+
+        &--active {
+            transform: translateX(0);
+        }
+
+        &--close {
+            transform: translateX(-200%);
+        }
+    }
+
+    @include m($sm) {
+        padding-top: 25px;
+        right: 16%;
+    }
+
+    @include hl {
+        padding-top: 5px;
+    }
+
+    &__close-btn {
+
+        @include m($lg) {
+            position: absolute;
+            right: 26px;
+            top: 35px;
+            display: block;
+        }
+
+        @include hl {
+            top: 15px;
+        }
+    }
+
+    &__close-btn-img {
+        width: 18px;
+        height: 18px;
+    }
+
+    &__address {
+        @include m($lg) {
+            margin-left: 15px;
+            display: block;
+        }
+    }
+
+    &__logo {
+        @include m($lg) {
+            margin-bottom: 25px;
+            margin-left: 15px;
+            display: inline-block;
+        }
+
+        @include hl {
+            margin-bottom: 5px;
+        }
+    }
+}

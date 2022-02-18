@@ -2,11 +2,15 @@
     margin-bottom: 120px;
 
     @include m($lg) {
-        margin-bottom: 90px;
+        margin-bottom: 60px;
     }
 
     @include m($md) {
         margin-bottom: 50px;
+    }
+
+    @include hl {
+        margin-bottom: 20px;
     }
 
     @include m($sm) {
@@ -34,7 +38,6 @@
         max-width: 540px;
 
         @include m($lg) {
-            text-align: center;
             max-width: 100%;
         }
 
@@ -51,6 +54,10 @@
             margin-bottom: 30px;
         }
 
+        @include hl {
+            margin-bottom: 20px;
+        }
+
         @include m($sm) {
             margin-bottom: 15px;
         }
@@ -58,9 +65,14 @@
 
     &__text {
         margin-bottom: 28px;
+        @include line-clamp(5);
 
         p {
             opacity: 0.9;
+
+            @include hl {
+                font-size: 18px;
+            }
 
             @include m($sm) {
                 font-size: 14px;
@@ -74,14 +86,6 @@
 
     &__list {
         display: flex;
-
-        @include m($lg) {
-            justify-content: center;
-        }
-
-        @include m($sm) {
-            justify-content: flex-start;
-        }
     }
 
     &__item {

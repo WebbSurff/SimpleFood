@@ -1,78 +1,20 @@
 .header {
 
-    &__address,
-    &__logo,
-    &__close-btn {
-        display: none;
-    }
-
-    &__close-btn {
-        @include m($lg) {
-            position: absolute;
-            right: 26px;
-            top: 35px;
-            display: block;
-
-            &-img {
-                width: 18px;
-                height: 18px;
-            }
-        }
-
-        @include hl {
-            top: 15px;
-        }
-    }
-
-    &__address {
-        @include m($lg) {
-            margin-left: 15px;
-            display: block;
-        }
-    }
-
     &__logo {
-        @include m($lg) {
-            margin-bottom: 25px;
-            margin-left: 15px;
-            display: inline-block;
-        }
+        margin-right: auto;
 
         @include hl {
-            margin-bottom: 5px;
-        }
-    }
-
-    &__mobile {
-
-        @include m($lg) {
-            transform: translateX(-200%);
-            top: 0;
-            background-color: $white;
-            bottom: 0;
-            right: 10%;
-            left: 0;
-            z-index: 20;
-            position: absolute;
-            transition: transform 0.5s, background-color 0.3s;
-            padding-top: 35px;
-
-            &--active {
-                transform: translateX(0);
-            }
-
-            &--close {
-                transform: translateX(-200%);
-            }
+            width: 117px;
         }
 
         @include m($sm) {
-            padding-top: 25px;
-            right: 16%;
+            width: 117px;
         }
+    }
 
-        @include hl {
-            padding-top: 5px;
+    &__menu {
+        @include m($lg) {
+            display: none;
         }
     }
 
