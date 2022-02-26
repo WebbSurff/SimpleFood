@@ -251,16 +251,23 @@
             }
         }
 
-        &--checked+.product-offer__label:before {
-            content: '';
-            border: 1px solid #363853;
+        &--checked+.product-offer__label {
+
+            &::before {
+                content: '';
+                border: 1px solid #363853;
+            }
+
         }
 
-        &:checked+.product-offer__label::before {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 60%;
-            background-image: url('../images/sprite.svg#choise');
+        &:checked+.product-offer__label {
+
+            &::before {
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 60%;
+                background-image: url('../images/sprite.svg#choise');
+            }
         }
 
         &:not(:disabled):not(:checked)+.product-offer__label {

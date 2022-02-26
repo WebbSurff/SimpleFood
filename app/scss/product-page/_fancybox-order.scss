@@ -1,0 +1,155 @@
+.fancybox__container {
+    --fancybox-color: #525252;
+    --fancybox-bg: #fff;
+
+    --carousel-button-svg-stroke-width: 1.2;
+    --carousel-button-svg-filter: none;
+    background-color: $gray;
+
+    &:focus {
+        box-shadow: transparent;
+    }
+}
+
+.carousel__button.is-close {
+    color: $gray;
+    opacity: 60%;
+    right: 50px;
+    top: 50px;
+    --carousel-button-svg-width: 32px;
+    --carousel-button-svg-height: 32px;
+    transition: color 0.3s, opacity 0.3s;
+
+    &:hover {
+        color: $orange-900;
+        opacity: 1;
+    }
+}
+
+.fancybox__container .fancybox__carousel {
+    margin: 0;
+}
+
+.fancybox__container .fancybox__slide {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fancybox__container .carousel__dots {
+    left: 50%;
+    top: 84%;
+    right: auto;
+    transform: translateX(-50%);
+    padding: 0 6px;
+    border-radius: 1rem;
+    z-index: 1052;
+}
+
+.carousel__dot {
+    transition: box-shadow 0.3s;
+    border-radius: 50%;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    &:focus {
+        border-radius: 50%;
+        box-shadow: $boxshadow-focus;
+    }
+
+    &:hover {
+        background-color: $bg-active;
+        box-shadow: 0 0 0 2px rgb(255 122 80 / 70%);
+    }
+}
+
+.carousel__dots .carousel__dot.is-selected:after {
+    opacity: 1;
+    background-color: $orange-900;
+}
+
+.carousel__dots .carousel__dot:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $gray;
+    opacity: 1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.fancybox__backdrop {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    bottom: 50px;
+    left: 50px;
+    border-radius: 15px;
+    z-index: -1;
+    background-color: white;
+
+    @include m($xl) {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+    }
+}
+
+.fancybox__nav .carousel__button.is-next,
+.fancybox__nav .carousel__button.is-prev {
+    --carousel-button-svg-width: 32px;
+    --carousel-button-svg-height: 32px;
+    transition: color 0.3s;
+
+    &:hover {
+        color: $orange-900;
+    }
+}
+
+.fancybox__nav .carousel__button.is-next {
+    right: 110px;
+
+    @include m($lg) {
+        right: 10px;
+    }
+}
+
+.fancybox__nav .carousel__button.is-prev {
+    left: 110px;
+
+    @include m($lg) {
+        left: 10px;
+    }
+}
+
+.has-image[data-image-fit=contain-w] .fancybox__image {
+    @include m($lg) {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    @include m($lg) {
+        max-width: 60%;
+    }
+
+    @include m($md) {
+        max-width: 75%;
+    }
+
+    @include hlxl {
+        max-width: 65%;
+        margin: 0 auto;
+    }
+
+    @include hl {
+        max-width: 40%;
+    }
+
+}

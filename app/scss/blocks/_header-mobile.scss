@@ -12,7 +12,8 @@
         right: 40%;
         left: 0;
         z-index: 20;
-        position: absolute;
+        position: fixed;
+        overflow: auto;
         transition: transform 0.5s, background-color 0.3s;
         padding-top: 35px;
 

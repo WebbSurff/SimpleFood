@@ -3,15 +3,23 @@ Tahoma;
 
 $silver-100: #f9faff;
 $silver-200: #EEEFF3;
+$silver-300: #F9FAFF;
+
+
 $orange-900: #ff6838;
 $orang-300: #FAEDED;
 $oranfe-200: #FF7A50;
 $orange-100: #FFAE94;
+
 $darkBlue-900: #363853;
+
 $dark: #31352B;
 $dark-100: #505050;
+
+$gray-100:#C1C1C1;
 $gray: #c2c2c2;
-$silver-200: #ececec;
+
+$silver-400: #ececec;
 $white: #fff;
 
 $boxShadow-700: 0 0 0 2px rgba(255, 122, 80, 0.7);
@@ -31,3 +39,11 @@ $lg: 992;
 $md: 768;
 $sm: 560;
 $xs: 375;
+
+@function max($numbers...) {
+    @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+    @return m#{i}n(#{$numbers});
+}

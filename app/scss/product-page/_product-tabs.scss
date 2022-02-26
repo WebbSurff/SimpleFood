@@ -1,0 +1,372 @@
+.product-nav {
+    display: flex;
+    margin-bottom: 30px;
+    overflow: auto;
+
+    @include m($md) {
+        margin-bottom: 20px;
+    }
+
+    @include hl {
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 60px;
+
+            @include m($md) {
+                margin-right: 30px;
+            }
+
+            @include hl {
+                margin-right: 30px;
+            }
+        }
+
+        @include m($md) {
+            padding: 10px 0;
+        }
+    }
+
+    &__link {
+        font-size: 24px;
+        color: $darkBlue-900;
+        transition: color 0.4s, box-shadow 0.3s;
+        border-radius: 5px;
+
+        @include m($md) {
+            font-size: 20px;
+            display: flex;
+        }
+
+        @include hl {
+            font-size: 20px;
+        }
+
+        &--active {
+            color: $orange-900;
+        }
+
+        &:focus {
+            box-shadow: $boxshadow-focus;
+        }
+
+        &:hover {
+            color: $orange-900;
+        }
+
+        &:active {
+            color: $dark;
+            text-shadow: $textshadow-active;
+        }
+    }
+}
+
+.product-tabs {
+    margin-bottom: 120px;
+
+    @include m($lg) {
+        margin-bottom: 70px;
+    }
+
+    @include m($md) {
+        margin-bottom: 50px;
+    }
+
+    @include hl {
+        margin-bottom: 40px;
+    }
+
+    @include m($sm) {
+        margin-bottom: 45px;
+    }
+
+    &__box {
+        max-width: 690px;
+        margin: 0 auto;
+    }
+
+    &__info {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}
+
+.product-description {
+    p {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        opacity: 0.9;
+
+        @include m($md) {
+            font-size: 16px;
+        }
+    }
+}
+
+.product-specifications {
+
+    &__item {
+
+        opacity: 0.9;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        @include m($md) {
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        font-weight: 600;
+    }
+}
+
+.product-reviews {
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.2;
+        color: $darkBlue-900;
+        letter-spacing: 0.03em;
+        margin-bottom: 30px;
+
+        @include m($md) {
+            font-size: 20px;
+        }
+    }
+
+    &__list {
+        margin-bottom: 60px;
+
+        @include m($md) {
+            margin-bottom: 45px;
+        }
+
+        @include hl {
+            margin-bottom: 45px;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid $gray-100;
+
+            @include m($md) {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}
+
+.product-opinion {
+
+
+    &__top {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m($md) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__data {
+        display: flex;
+    }
+
+    &__photo {
+        margin-right: 25px;
+        border-radius: 50%;
+
+        @include m($md) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__info {
+        color: $dark-100;
+    }
+
+    &__name {
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    &__date {
+        font-size: 18px;
+        letter-spacing: 0.03em;
+        line-height: 1.3;
+    }
+
+    &__star {
+        display: flex;
+    }
+
+    &__text {
+        color: $dark-100;
+
+        @include m($md) {
+            font-size: 16px;
+        }
+    }
+}
+
+.product-form {
+    color: $dark-100;
+
+    &__star {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    &__star-text {
+        margin-right: 10px;
+        line-height: 1.3;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        @include m($md) {
+            flex-direction: column;
+            align-items: unset;
+        }
+
+        @include hl {
+            flex-direction: column;
+            align-items: unset;
+        }
+    }
+
+    &__message {
+        margin-right: 30px;
+
+        @include m($md) {
+            margin-right: 25px;
+            margin-bottom: 20px;
+        }
+
+    }
+
+    &__name {
+        margin-bottom: 10px;
+
+        @include m($md) {
+            margin-bottom: 20px;
+        }
+    }
+
+
+
+    &__label {
+        line-height: 1.3;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    &__input {
+        width: 260px;
+        height: 57px;
+
+        @include m($md) {
+            width: 100%;
+        }
+
+        @include hl {
+            width: 100%;
+        }
+    }
+
+    &__input,
+    &__textarea {
+        padding: 18px;
+        border-radius: 5px;
+        border: 1px solid $gray;
+        resize: none;
+        outline: transparent;
+        transition: box-shadow 0.3s;
+
+        &:focus {
+            border-color: transparent;
+            box-shadow: $boxshadow-focus;
+        }
+
+
+        &:hover {
+            &::placeholder {
+                color: $dark;
+            }
+        }
+
+        &::placeholder {
+            font-size: 16px;
+            line-height: 1.3;
+            color: $gray-100;
+            transition: color 0.3s;
+        }
+
+
+    }
+
+    &__textarea {
+        width: 400px;
+        height: 165px;
+        padding: 18px 16px;
+
+        @include m($md) {
+            width: 100%;
+        }
+
+        @include hl {
+            width: 100%;
+        }
+    }
+
+    .product-offer__input+.product-form__checkbox {
+
+        @include m($md) {
+            align-items: unset;
+        }
+    }
+
+    .product-offer__input+.product-offer__label {
+
+        &::before {
+            background-color: $white;
+        }
+    }
+
+    &__checkbox {
+        margin-bottom: 30px;
+        @include line-clamp(3);
+
+        @include m($md) {
+            font-size: 18px;
+        }
+    }
+
+    &__button {
+        padding: 12px 32px;
+    }
+}

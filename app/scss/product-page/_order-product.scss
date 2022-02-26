@@ -1,0 +1,335 @@
+.order-product {
+    padding-bottom: 74px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E4E4E4;
+
+    @include m($md) {
+        padding-bottom: 50px;
+        margin-bottom: 20px;
+    }
+
+    @include hl {
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+    }
+
+    @include m($sm) {
+        padding-bottom: 29px;
+        margin-bottom: 20px;
+    }
+
+    &__inner {
+        display: flex;
+
+        @include m($xl) {
+            flex-direction: column;
+        }
+    }
+
+    &__photo {
+        max-width: 610px;
+        margin-right: 27px;
+        box-shadow: 0 0 0 1px $silver-200;
+        border-radius: 5px;
+        height: 538px;
+
+        @include m($xl) {
+            margin-right: 0;
+            margin-bottom: 40px;
+            align-self: center;
+            height: 460px;
+        }
+
+        @include m($md) {
+            align-self: start;
+            max-width: 100%;
+        }
+
+        @include hl {
+            height: 300px;
+            margin-bottom: 20px;
+            max-width: 510px;
+        }
+
+        @include m($sm) {
+            height: 335px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        position: relative;
+    }
+
+    &__item {
+        background-color: $white;
+        max-height: 539px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        margin: 0 auto;
+
+        @include hl {
+            width: 250px;
+            height: 250px;
+        }
+
+        @include m($sm) {
+            width: 297px;
+            height: 285px;
+        }
+    }
+
+    .swiper {
+        margin-left: 0;
+    }
+
+    &__button-next,
+    &__button-prev {
+        position: absolute;
+        top: 48%;
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+        cursor: pointer;
+        transition: filter 0.2s;
+        border-radius: 5px;
+        outline: transparent;
+
+        @include m($sm) {
+            display: none;
+        }
+
+        &:hover {
+            filter: invert(46%) sepia(66%) saturate(1265%) hue-rotate(337deg) brightness(102%) contrast(102%);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-repeat: no-repeat;
+            background-size: 86%;
+            background-position: center center;
+
+        }
+    }
+
+    &__button-next {
+        right: 33px;
+
+        &::after {
+            background-image: url('../images/sprite.svg#product-arrow-right');
+            right: 0;
+        }
+    }
+
+    &__button-prev {
+        left: 35px;
+
+        &::before {
+            background-image: url('../images/sprite.svg#product-arrow-left');
+            left: 0;
+        }
+    }
+
+}
+
+
+
+
+.make-order {
+    &__title {
+        margin-bottom: 26px;
+
+        @include m($lg) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__star {
+        margin-bottom: 19px;
+        display: inline-flex;
+
+        @include m($md) {
+            margin-bottom: 8px;
+
+            img {
+                &:not(:last-child) {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+
+    &__price {
+        display: block;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 1.4;
+        color: $darkBlue-900;
+        margin-bottom: 20px;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        @include m($sm) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &__input {
+        margin-right: 20px;
+        width: 158px;
+        height: 44px;
+        border: none;
+        background-color: $orang-300;
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        color: $darkBlue-900;
+        position: relative;
+        outline: transparent;
+        transition: box-shadow 0.3s;
+        border-radius: 3px;
+
+        &:focus {
+            box-shadow: $boxShadow-700;
+        }
+
+        @include m($sm) {
+            margin-right: 0;
+            margin-bottom: 14px;
+        }
+    }
+
+    .jq-number__field input {
+        text-align: center;
+    }
+
+    .jq-number__spin.minus,
+    .jq-number__spin.plus {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 44px;
+        border-radius: 3px 0px 0px 3px;
+        background-color: $orange-900;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+
+        &:hover {
+            background-color: $orang-300;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background-color: $white;
+            top: 27%;
+            left: 47%;
+            transform: rotate(90deg);
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                background: $darkBlue-900;
+            }
+        }
+    }
+
+    .jq-number__spin.plus {
+        right: 0;
+        border-radius: 0px 3px 3px 0px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background-color: $white;
+            top: 27%;
+            left: 47%;
+        }
+    }
+
+    &__button {
+        padding: 13px 38px 13px 70px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url('../images/sprite.svg#cart-icon');
+            width: 16px;
+            height: 16px;
+            left: 38px;
+            top: 14px;
+        }
+
+        &:focus {
+            &::before {
+                filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
+            }
+        }
+
+        &:hover {
+            &::before {
+                filter: invert(43%) sepia(99%) saturate(632%) hue-rotate(333deg) brightness(101%) contrast(101%);
+            }
+        }
+
+        @include m($md) {
+            padding: 13px 42px 13px 72px;
+        }
+
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        line-height: 1.2;
+        color: $darkBlue-900;
+        letter-spacing: 0.03em;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        font-weight: 400;
+        border-bottom: 1px solid #E4E4E4;
+
+        @include m($md) {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+    }
+
+    &__list {
+        margin-bottom: 20px;
+
+        @include m($sm) {
+            margin-bottom: 9px;
+        }
+    }
+
+    &__item {
+        font-size: 16px;
+        letter-spacing: 0.03em;
+        color: $dark-100;
+        @include line-clamp(3);
+        max-width: 540px;
+    }
+}

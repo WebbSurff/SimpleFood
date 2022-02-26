@@ -1,0 +1,38 @@
+.rating-form {
+    flex-direction: row-reverse;
+    display: flex;
+}
+
+.rating-form:not(:checked)>input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+}
+
+.rating-form:not(:checked)>label {
+    width: 20px;
+    height: 15px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    margin-right: 2px;
+}
+
+.rating-form:not(:checked)>label::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/sprite.svg#star-form');
+    width: 16px;
+    height: 16px;
+}
+
+.rating-form>input:checked~label::before {
+    background-image: url('../images/sprite.svg#star-true');
+}
+
+.rating-form:not(:checked)>label:hover::before,
+.rating-form:not(:checked)>label:hover~label::before {
+    background-image: url('../images/sprite.svg#star-true');
+}
