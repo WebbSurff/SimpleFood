@@ -6,6 +6,7 @@ const {
     series
 } = require('gulp');
 
+
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
@@ -45,6 +46,7 @@ function scripts() {
             'node_modules/jquery/dist/jquery.js',
             'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
             'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+            'node_modules/raty-js/lib/jquery.raty.js',
             'app/js/main.js'
         ])
         .pipe(concat('main.min.js'))

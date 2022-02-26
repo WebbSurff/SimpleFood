@@ -9,6 +9,8 @@
   "author": "Vladyslav Yatsenko",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^4.0.26",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -22,9 +24,12 @@
     "jquery": "^3.6.0",
     "jquery-form-styler": "^2.0.2",
     "mixitup": "^3.3.1",
+    "rateyo": "^2.3.2",
+    "raty-js": "^3.1.1",
     "sass": "^1.49.0"
   },
   "dependencies": {
+    "magnific-popup": "^1.1.0",
     "swiper": "^8.0.3"
   }
 }

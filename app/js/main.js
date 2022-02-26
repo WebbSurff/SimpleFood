@@ -1,6 +1,13 @@
 $(function () {
-    $('.select-style').styler();
+    $(".product-price__input").ionRangeSlider();
 
+    $('.make-order__star, .product-opinion__star').raty({
+        starOff: '../images/icons/star-false.svg',
+        starOn: '../images/icons/star-true.svg',
+        readOnly: true,
+    });
+
+    $('.select-style, .make-order__input').styler();
 
     $(".user-nav__btn").on("click", function () {
         $(".user-nav__input").toggleClass("user-nav__input-active");
@@ -24,16 +31,121 @@ $(function () {
         $(".product-offer__input").removeClass("product-offer__input--checked");
     })
 
-    $(".product-price__input").ionRangeSlider()
-
-
-
     $(".filter-mobile__close").on("click", function () {
         $(".filter-mobile, body").removeClass("filter-mobile--active lock-filter");
     })
 
-    var mixer = mixitup('.popular-categories__product');
+    $('.product-nav__link').on("click", function (e) {
+        e.preventDefault();
+        $('.product-nav__link').removeClass('product-nav__link--active');
+        $(this).addClass('product-nav__link--active');
+
+        $('.product-tabs__info').removeClass('product-tabs__info--active');
+        $($(this).attr('href')).addClass('product-tabs__info--active');
+
+    });
+
+    Fancybox.bind("[data-fancybox]", {
+
+        animated: false,
+        showClass: false,
+        hideClass: false,
+        dragToClose: false,
+        closeButton: "top",
+
+        Thumbs: false,
+        Toolbar: false,
+        autoplay: 'autoplay',
+
+        Carousel: {
+            // Enable dots
+            Dots: true,
+
+            // Disable touch guestures
+            Panzoom: {
+                touch: false,
+            },
+
+            // Disable sliding animation
+            friction: 0,
+            Autoplay: {
+                timeout: 1000,
+            },
+        },
+
+        Image: {
+            zoom: false,
+            click: false,
+            wheel: false,
+            fit: "contain-w",
+        },
+
+        on: {
+            init: (fancybox) => (fancybox.prevScrollTop = 0),
+            done: (fancybox, slide) => (slide.$el.scrollTop = fancybox.prevScrollTop),
+            "Carousel.change": (fancybox, carousel, to, from) => {
+                fancybox.prevScrollTop = carousel.slides[from].$el.scrollTop || 0;
+
+                if (carousel.slides[to].$el) {
+                    carousel.slides[to].$el.scrollTop = fancybox.prevScrollTop;
+                }
+            },
+        },
+
+    });
+
+    var swiper = new Swiper('.order-product__photo', {
+        navigation: {
+            nextEl: '.order-product__button-next',
+            prevEl: '.order-product__button-prev'
+        },
+    });
+
+    var swiperInterested = new Swiper('.maybe-interested__container', {
+        spaceBetween: 30,
+        slidesPerView: true,
+        freeMode: true,
+        navigation: {
+            nextEl: '.maybe-interested__button-next',
+            prevEl: '.maybe-interested__button-prev'
+        },
+        pagination: {
+            el: '.maybe-interested__pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 5,
+                slidesPerGroup: 2,
+
+            },
+            550: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 30,
+
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 15,
+            },
+
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            1200: {
+                slidesPerView: 5,
+            },
+        },
+    });
+
 });
+let containerEl = document.querySelector('.popular-categories__product');
+let mixer;
+
+if (containerEl) mixer = mixitup(containerEl);
 
 var $range = $(".product-price__input");
 var $inputFrom = $(".product-price__from");
@@ -97,9 +209,7 @@ $inputTo.on("change", function () {
     $(this).prop("value", val);
 });
 
-
-
-new Swiper('.customer-reviews__container', {
+var customerSwiper = new Swiper('.customer-reviews__container', {
     navigation: {
         nextEl: '.customer-reviews__button-next',
         prevEl: '.customer-reviews__button-prev'
@@ -109,6 +219,7 @@ new Swiper('.customer-reviews__container', {
         clickable: true,
     },
 });
+
 
 
 var catalogSlider = null;
@@ -128,7 +239,11 @@ function catalogSliderInit() {
                     spaceBetween: 330
                 },
                 560: {
-                    spaceBetween: 200
+                    spaceBetween: 200,
+                },
+
+                780: {
+                    spaceBetween: 200,
                 },
             }
         });

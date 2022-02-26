@@ -546,8 +546,8 @@
     &__item {
 
         &:not(:last-child) {
-            margin-right: 4px;
-            padding-right: 10px;
+            margin-right: 5px;
+            padding-right: 12px;
             position: relative;
 
             &::after {
@@ -564,11 +564,12 @@
             @include m($sm) {
                 margin-right: 6px;
                 padding-right: 13px;
+
+                &:nth-child(n+2) {
+                    display: none;
+                }
             }
         }
-
-
-
     }
 
     &__link {
@@ -576,5 +577,20 @@
         font-size: 14px;
         letter-spacing: 0.03em;
         line-height: 1.2;
+        transition: color 0.4s, box-shadow 0.3s;
+        border-radius: 5px;
+
+        &:focus {
+            box-shadow: $boxshadow-focus;
+        }
+
+        &:hover {
+            color: $orange-900;
+        }
+
+        &:active {
+            color: $dark;
+            text-shadow: $textshadow-active;
+        }
     }
 }
