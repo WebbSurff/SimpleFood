@@ -242,9 +242,6 @@ function catalogSliderInit() {
                     spaceBetween: 200,
                 },
 
-                780: {
-                    spaceBetween: 200,
-                },
             }
         });
     }
